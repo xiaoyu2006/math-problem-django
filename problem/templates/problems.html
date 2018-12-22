@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2><a href="{% url 'prob:new_prob' %}">New problem>></a></h2>
+    <h1>All problems:</h1>
+    <ul>
+        {% for p in problems %}
+            <li>
+                <h2>Title: {{ p.title }}</h2>
+                <h4>Problem:<br>{{ p.text|linebreaks }}</h4>
+                <h5>Asker: {{ p.asker }}</h5>
+                <h6><a href="{% url 'prob:prob' p.id %}">Details>></a></h6>
+            </li>
+        {% empty %}
+            <li>No problems</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

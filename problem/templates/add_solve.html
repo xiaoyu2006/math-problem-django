@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ prob.title }}</h1>
+    <h2>{{ prob.text|linebreaks }}</h2>
+    <form action="{% url 'prob:new_solve' prob.id %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name="submit">Submit</button>
+    </form>
+{% endblock content %}
