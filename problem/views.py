@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 
@@ -16,7 +16,7 @@ def all_prob(request):
     return render(request, 'problems.html', context=context)
 
 def show_prob(request, id):
-    prob=Problem.objects.get(id=id)
+    prob=get_object_or_404(Problem, id=id)
     solves=prob.solve_set.all().order_by('-date_added')
     context={'prob': prob, 'solves': solves}
     return render(request, 'problem.html', context=context)
@@ -35,7 +35,7 @@ def new_prob(request):
     return render(request, 'add_prob.html', context=context)
 
 def new_solve(request, id):
-    prob=Problem.objects.get(id=id)
+    prob=get_object_or_404(Problem, id=id)
     if request.method!='POST':
         form=SolveForm()
     else:
