@@ -103,12 +103,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Settings for Heroku
-if '/app' == os.getcwd():
+if '/app/math_problem' == os.getcwd():
     DEBUG = False
     import dj_database_url
     DATABASES={
        'default': dj_database_url.config(default='postgres://localhost')
-    }   
+    }
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     ALLOWED_HOSTS = ['*']
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
