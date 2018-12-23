@@ -1,15 +1,46 @@
+{% load bootstrap3 %}
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Math-Problems</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Settings for bootstrap3 -->
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
 </head>
 <body>
-    <h4>
-        <a href="{% url 'prob:index' %}">Math-Problems</a> - 
-        <a href="{% url 'prob:probs' %}">All-Problems</a>
-    </h4>
-    {% block content %}{% endblock content %}
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed"
+                data-toggle="collapse" data-target="#navbar"
+                aria-expanded="false" aria-controls="navbar">
+                </button>
+                <a class="navbar-brand" href="{% url 'prob:index' %}">Math-Problems</a>
+            </div>
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{% url 'prob:probs' %}">All-Problems</a></li>
+                    <li><a href="{% url 'prob:new_prob' %}">Ask-One-Problem</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="page-header">
+            {% block header %}{% endblock header %}
+        </div>
+        <div>
+            {% block content %}{% endblock content %}
+        </div>
+    </div>
 </body>
 </html>
