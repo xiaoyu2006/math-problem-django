@@ -103,7 +103,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Settings for Heroku
-if '/app' in os.getcwd():
+if '/app' == os.getcwd():
     DEBUG = False
     import dj_database_url
     DATABASES={
