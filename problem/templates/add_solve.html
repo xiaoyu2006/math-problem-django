@@ -1,11 +1,18 @@
 {% extends 'base.html' %}
+{% load bootstrap3 %}
 
-{% block content %}
+{% block header %}
+    <h1>Solve it.</h1>
     <h1>{{ prob.title }}</h1>
     <h2>{{ prob.text|linebreaks }}</h2>
-    <form action="{% url 'prob:new_solve' prob.id %}" method="POST">
+{% endblock header %}
+
+{% block content %}
+    <form action="{% url 'prob:new_solve' prob.id %}" method="POST" class="form">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button name="submit">Submit</button>
+        {% bootstrap_form form %}
+        {% buttons %}
+        <button name="submit" class="btn btn-primary">Submit</button>
+        {% endbuttons %}
     </form>
 {% endblock content %}

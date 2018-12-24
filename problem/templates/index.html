@@ -1,9 +1,17 @@
 {% extends 'base.html' %}
 
+{% block header %}
+    <div class="jumbotron">
+        <h1>This is a place where people can talk and solve math problems!</h1>
+    </div>
+{% endblock header %}
+
 {% block content %}
     <h1>
-        This is a place where people can talk and solve math problems!<br>
         <a href="{% url 'prob:probs' %}">All problems>>></a>
     </h1>
-    <h5>Created by nemo!</h5>
+    <h3>
+        Got any problems&suggestions while using? Report it to me:<br>
+        <i>caoyi06@outlook.com</i>
+    </h3>
 {% endblock content %}

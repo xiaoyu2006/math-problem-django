@@ -1,5 +1,4 @@
 {% load bootstrap3 %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +18,7 @@
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed"
                 data-toggle="collapse" data-target="#navbar"
-                aria-expanded="false" aria-controls="navbar">
+                aria-expanded="false" aria-controls="navbar">M
                 </button>
                 <a class="navbar-brand" href="{% url 'prob:index' %}">Math-Problems</a>
             </div>
@@ -36,11 +35,18 @@
     
     <div class="container">
         <div class="page-header">
-            {% block header %}{% endblock header %}
+            {% block header %}
+            {% endblock header %}
         </div>
         <div>
-            {% block content %}{% endblock content %}
+            {% block content %}
+            {% endblock content %}
         </div>
     </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">Created by Nemo. Thank you for using.</p>
+        </div>
+    </footer>
 </body>
 </html>

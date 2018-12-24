@@ -103,6 +103,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Settings for Bootstrap3
+BOOTSTRAP3={
+    'include_jquery': True,
+}
+
 # Settings for Heroku
 DEBUG = False
 import dj_database_url

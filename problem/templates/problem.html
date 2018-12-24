@@ -2,8 +2,8 @@
 
 {% block content %}
     <h2>Title: {{ prob.title }}</h2>
-    <p>Problem:<br>{{ prob.text|linebreaks }}</p>
-    <h5>Asker: {{ prob.asker }}<br><br></h5>
+    <h3>Problem:<br>{{ prob.text|linebreaks }}</h3>
+    <h6>Asker: {{ prob.asker }}<br><br></h6>
     <a href="{% url 'prob:new_solve' prob.id %}">Solve it>></a>
     <ul>
         {% for s in solves %}
