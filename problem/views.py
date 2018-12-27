@@ -25,7 +25,7 @@ def new_prob(request):
     if request.method!='POST':
         form=ProbForm()
     else:
-        form=ProbForm(request.POST)
+        form=ProbForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(

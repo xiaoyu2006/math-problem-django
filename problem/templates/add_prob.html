@@ -6,7 +6,7 @@
 {% endblock header %}
 
 {% block content %}
-    <form action="{% url 'prob:new_prob' %}" method="POST" class="form">
+    <form action="{% url 'prob:new_prob' %}" method="POST" enctype="multipart/form-data" class="form">
         {% csrf_token %}
         {% bootstrap_form form %}
         {% buttons %}

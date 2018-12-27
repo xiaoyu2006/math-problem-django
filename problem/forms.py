@@ -5,11 +5,12 @@ from .models import Problem, Solve
 class ProbForm(forms.ModelForm):
     class Meta:
         model=Problem
-        fields=['title', 'text', 'asker']
+        fields=['title', 'text', 'asker', 'img']
         labels={
             'title': 'Title',
             'text': 'Index',
-            'asker': 'Your name'
+            'asker': 'Your name',
+            'img': 'Got image?'
         }
         widgets={
             'title': forms.Textarea(
@@ -20,7 +21,7 @@ class ProbForm(forms.ModelForm):
             ),
             'asker': forms.Textarea(
                 attrs={'rows':1}
-            )
+            ),
         }
 
 class SolveForm(forms.ModelForm):
