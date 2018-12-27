@@ -5,12 +5,12 @@ from .models import Problem, Solve
 class ProbForm(forms.ModelForm):
     class Meta:
         model=Problem
-        fields=['title', 'text', 'asker', 'img']
+        fields=['title', 'text', 'asker', 'image']
         labels={
             'title': 'Title',
             'text': 'Index',
             'asker': 'Your name',
-            'img': 'Got image?'
+            'image': 'Got image?'
         }
         widgets={
             'title': forms.Textarea(
