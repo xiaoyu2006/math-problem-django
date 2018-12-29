@@ -8,7 +8,7 @@
     <h2>Title: {{ prob.title }}</h2>
     <h3>Problem:<br>{{ prob.text|linebreaks }}</h3>
     {% if prob.img %}
-        <img src="{{ prob.img.url }}" />
+        <img src="{{ img_url }}" />
     {% endif %}
     <h6>Asker: {{ prob.asker }}<br><br></h6>
     <a href="{% url 'prob:new_solve' prob.id %}">Solve it>></a>
