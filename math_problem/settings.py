@@ -111,7 +111,7 @@ BOOTSTRAP3={
     'include_jquery': True,
 }
 
- Settings for Heroku
+# Settings for Heroku
 DEBUG = True
 import dj_database_url
 DATABASES={
