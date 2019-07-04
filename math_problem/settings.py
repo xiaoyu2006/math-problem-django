@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '%dq7m0^(1nkt5p1k!(==$c=f9au@w@m@g=&#@3oq#73$vh8%^i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -111,7 +111,7 @@ BOOTSTRAP3={
     'include_jquery': True,
 }
 
-# Settings for Heroku
+ Settings for Heroku
 DEBUG = True
 import dj_database_url
 DATABASES={

@@ -1,3 +1,5 @@
+#coding=utf-8
+
 from os.path import abspath
 
 from django.shortcuts import render, get_object_or_404
