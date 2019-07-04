@@ -5,3 +5,8 @@ from .models import Problem, Solve
 
 admin.site.register(Problem)
 admin.site.register(Solve)
+
+import sys;
+
+reload(sys);
+sys.setdefaultencoding("utf8")
